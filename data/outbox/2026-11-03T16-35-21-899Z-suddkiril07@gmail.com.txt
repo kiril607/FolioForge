@@ -1,0 +1,43 @@
+FolioForge local outbox
+======================
+To: suddkiril07@gmail.com
+From: FolioForge <onboarding@resend.dev>
+Subject: [FolioForge] Нова заявка на Pro — $5 — suddkiril07@gmail.com
+Date: 2026-11-03T16:35:21.899Z
+
+Нова заявка на FolioForge Pro.
+
+Замовлення: ord-mw0wshpl-5edbb4e6
+Ім'я: KYRYL SUDDENKO
+Email: suddkiril07@gmail.com
+Сума: $5
+Спосіб оплати: Stripe
+Транзакція / коментар: e
+Примітка: —
+Створено: 2026-11-03T16:35:21.897Z
+
+Підтвердити оплату: http://localhost:4173/admin
+
+Після підтвердження покупцю автоматично надійде одноразовий ключ.
+
+-------------------- HTML --------------------
+
+    <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1d1b16;max-width:560px;margin:0 auto">
+      <h2 style="margin:0 0 16px">Нова заявка на FolioForge Pro</h2>
+      <table style="border-collapse:collapse;width:100%">
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Замовлення</strong></td><td style="padding:6px 10px">ord-mw0wshpl-5edbb4e6</td></tr>
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Ім'я</strong></td><td style="padding:6px 10px">KYRYL SUDDENKO</td></tr>
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Email</strong></td><td style="padding:6px 10px">suddkiril07@gmail.com</td></tr>
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Сума</strong></td><td style="padding:6px 10px">$5</td></tr>
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Оплата</strong></td><td style="padding:6px 10px">Stripe</td></tr>
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Транзакція</strong></td><td style="padding:6px 10px">e</td></tr>
+        <tr><td style="padding:6px 10px;background:#f3efe5"><strong>Примітка</strong></td><td style="padding:6px 10px">—</td></tr>
+      </table>
+      <p style="margin-top:20px">
+        <a href="http://localhost:4173/admin" style="display:inline-block;padding:11px 18px;border-radius:8px;background:#e8633f;color:#fff;text-decoration:none">
+          Відкрити адмінку та підтвердити оплату
+        </a>
+      </p>
+      <p style="color:#706a5e;font-size:13px">Після підтвердження покупцю автоматично надійде одноразовий ключ.</p>
+    </div>
+  

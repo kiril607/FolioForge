@@ -1,0 +1,13 @@
+{
+  "name": "folioforge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FolioForge — конструктор портфоліо з Free/Pro планами, ручним підтвердженням оплати та одноразовими ліцензійними ключами.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

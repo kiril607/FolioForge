@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080a0c">
+  <title>FolioForge — замовлення та ліцензії</title>
+  <style>
+    :root {
+      --bg: #07090b;
+      --panel: #0d1115;
+      --panel-2: #11171c;
+      --text: #f1f5f2;
+      --text-soft: #c8d3cc;
+      --muted: #7f9088;
+      --line: rgba(255, 255, 255, 0.09);
+      --line-strong: rgba(255, 255, 255, 0.17);
+      --accent: #c7ff4e;
+      --accent-ink: #101406;
+      --warn: #ffcf70;
+      --danger: #ff7a7a;
+      --ok: #6ee7a8;
+      --radius: 14px;
+      --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(900px 520px at 15% -10%, rgba(199, 255, 78, 0.09), transparent 62%),
+        radial-gradient(760px 500px at 100% 0%, rgba(82, 229, 210, 0.07), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--accent); }
+
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+
+    header.top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand__mark {
+      display: grid;
+      width: 40px; height: 40px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .brand h1 { margin: 0; font-size: 17px; letter-spacing: -0.02em; }
+    .brand p { margin: 1px 0 0; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; }
+
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-soft);
+      font-size: 12px;
+      font-weight: 600;
+      transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+    .btn:hover { border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.075); color: var(--text); }
+    .btn--accent { border-color: transparent; background: var(--accent); color: var(--accent-ink); }
+    .btn--accent:hover { background: #d6ff7c; color: var(--accent-ink); }
+    .btn--ok { border-color: rgba(110, 231, 168, 0.35); background: rgba(110, 231, 168, 0.12); color: var(--ok); }
+    .btn--ok:hover { background: rgba(110, 231, 168, 0.2); }
+    .btn--danger { border-color: rgba(255, 122, 122, 0.32); background: rgba(255, 122, 122, 0.1); color: var(--danger); }
+    .btn--danger:hover { background: rgba(255, 122, 122, 0.18); }
+    .btn--ghost { background: transparent; }
+    .btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+
+    .login-card {
+      max-width: 460px;
+      margin: 70px auto;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)), var(--panel);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+    }
+    .login-card h2 { margin: 0 0 8px; font-size: 24px; letter-spacing: -0.03em; }
+    .login-card p { margin: 0 0 22px; color: var(--muted); font-size: 13px; }
+    .login-card label { display: block; margin-bottom: 7px; color: var(--text-soft); font-size: 12px; font-weight: 600; }
+    .login-card input {
+      width: 100%;
+      height: 42px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.25);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 13px;
+      outline: none;
+    }
+    .login-card input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(199, 255, 78, 0.12); }
+    .login-card .btn { width: 100%; margin-top: 14px; min-height: 42px; }
+    .login-hint { margin-top: 16px !important; font-size: 11px !important; line-height: 1.6; }
+    .login-hint code { color: var(--warn); }
+
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 18px 0;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 207, 112, 0.24);
+      border-radius: 10px;
+      background: rgba(255, 207, 112, 0.07);
+      color: var(--text-soft);
+      font-size: 12px;
+    }
+    .notice strong { color: var(--warn); }
+    .notice--ok { border-color: rgba(110, 231, 168, 0.24); background: rgba(110, 231, 168, 0.06); }
+    .notice--ok strong { color: var(--ok); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0;
+    }
+    .stat {
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+    .stat span { display: block; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; }
+    .stat strong { display: block; margin-top: 4px; font-size: 25px; letter-spacing: -0.04em; }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 6px; }
+    .filter {
+      min-height: 32px;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .filter.is-active { border-color: rgba(199, 255, 78, 0.35); background: rgba(199, 255, 78, 0.1); color: var(--accent); }
+
+    .orders { display: grid; gap: 10px; }
+
+    .order {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.026), transparent), var(--panel);
+    }
+    .order.is-pending { border-color: rgba(255, 207, 112, 0.22); }
+
+    .order__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .order__id { color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; }
+    .order__name { margin: 3px 0 0; font-size: 17px; letter-spacing: -0.02em; }
+    .order__email { color: var(--accent); font-size: 12px; text-decoration: none; }
+    .order__email:hover { text-decoration: underline; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pill::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .pill--pending { border-color: rgba(255, 207, 112, 0.3); color: var(--warn); }
+    .pill--approved { border-color: rgba(110, 231, 168, 0.3); color: var(--ok); }
+    .pill--rejected { border-color: rgba(255, 122, 122, 0.3); color: var(--danger); }
+
+    .order__meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 0;
+    }
+    .meta-item { min-width: 0; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: rgba(0, 0, 0, 0.16); }
+    .meta-item span { display: block; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: 0.11em; }
+    .meta-item strong { display: block; overflow-wrap: anywhere; margin-top: 2px; color: var(--text-soft); font-size: 12px; font-weight: 500; }
+    .meta-item code { color: var(--warn); font-family: var(--mono); font-size: 11px; }
+
+    .order__note { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+    .order__actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .order__actions .btn { min-height: 31px; padding: 0 11px; font-size: 11px; }
+
+    .key-reveal {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 11px 12px;
+      border: 1px dashed rgba(199, 255, 78, 0.36);
+      border-radius: 8px;
+      background: rgba(199, 255, 78, 0.05);
+    }
+    .key-reveal code { flex: 1; min-width: 200px; color: var(--accent); font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; }
+    .key-reveal small { width: 100%; color: var(--muted); font-size: 10px; }
+
+    .empty { padding: 50px 20px; border: 1px dashed var(--line-strong); border-radius: var(--radius); color: var(--muted); text-align: center; font-size: 13px; }
+
+    .toast-stack { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: grid; gap: 8px; width: min(340px, calc(100% - 32px)); }
+    .toast {
+      padding: 11px 14px;
+      border: 1px solid var(--line-strong);
+      border-left: 3px solid var(--accent);
+      border-radius: 9px;
+      background: #10161a;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+      color: var(--text-soft);
+      font-size: 12px;
+      animation: toast-in 0.22s ease;
+    }
+    .toast--error { border-left-color: var(--danger); }
+    .toast--warn { border-left-color: var(--warn); }
+    @keyframes toast-in { from { opacity: 0; transform: translateY(8px); } }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 760px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .order__meta { grid-template-columns: 1fr; }
+      header.top { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">F</span>
+        <div>
+          <h1>FolioForge Admin</h1>
+          <p>Замовлення · оплата · ключі</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="btn btn--ghost" href="/">До конструктора</a>
+        <button class="btn btn--ghost" id="logoutBtn" type="button" hidden>Вийти</button>
+      </div>
+    </header>
+
+    <section class="login-card" id="loginView">
+      <h2>Вхід в адмінку</h2>
+      <p>Введіть токен адміністратора. Він зберігається у файлі <code>data/admin-token.txt</code> або в змінній <code>ADMIN_TOKEN</code>.</p>
+      <form id="loginForm">
+        <label for="tokenInput">Токен адміністратора</label>
+        <input id="tokenInput" type="password" autocomplete="current-password" placeholder="••••••••••••" required>
+        <button class="btn btn--accent" type="submit">Увійти</button>
+      </form>
+      <p class="login-hint">Локально токен також друкується в консолі під час запуску <code>node server.js</code>.</p>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="notice" id="emailNotice" hidden></div>
+
+      <div class="stats">
+        <div class="stat"><span>Очікують</span><strong id="statPending">0</strong></div>
+        <div class="stat"><span>Підтверджені</span><strong id="statApproved">0</strong></div>
+        <div class="stat"><span>Відхилені</span><strong id="statRejected">0</strong></div>
+        <div class="stat"><span>Ключі використано</span><strong id="statKeys">0 / 0</strong></div>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Фільтр замовлень">
+          <button class="filter is-active" type="button" data-filter="all">Усі</button>
+          <button class="filter" type="button" data-filter="pending">Очікують</button>
+          <button class="filter" type="button" data-filter="approved">Підтверджені</button>
+          <button class="filter" type="button" data-filter="rejected">Відхилені</button>
+        </div>
+        <button class="btn" id="refreshBtn" type="button">Оновити</button>
+      </div>
+
+      <div class="orders" id="ordersList"></div>
+    </section>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var TOKEN_KEY = "folioforge.admin.token";
+      var state = {
+        token: sessionStorage.getItem(TOKEN_KEY) || "",
+        orders: [],
+        filter: "all",
+        busy: false,
+      };
+
+      var loginView = document.getElementById("loginView");
+      var dashboard = document.getElementById("dashboard");
+      var loginForm = document.getElementById("loginForm");
+      var tokenInput = document.getElementById("tokenInput");
+      var logoutBtn = document.getElementById("logoutBtn");
+      var ordersList = document.getElementById("ordersList");
+      var refreshBtn = document.getElementById("refreshBtn");
+      var emailNotice = document.getElementById("emailNotice");
+      var toastStack = document.getElementById("toastStack");
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function formatDate(value) {
+        if (!value) return "—";
+        try {
+          return new Intl.DateTimeFormat("uk-UA", {
+            day: "2-digit", month: "2-digit", year: "numeric",
+            hour: "2-digit", minute: "2-digit",
+          }).format(new Date(value));
+        } catch {
+          return value;
+        }
+      }
+
+      function toast(message, type) {
+        var node = document.createElement("div");
+        node.className = "toast" + (type ? " toast--" + type : "");
+        node.textContent = message;
+        toastStack.appendChild(node);
+        setTimeout(function () { node.remove(); }, 4200);
+      }
+
+      async function api(path, options) {
+        var opts = options || {};
+        var headers = Object.assign({ "Content-Type": "application/json" }, opts.headers || {});
+        headers["X-Admin-Token"] = state.token;
+
+        var response = await fetch(path, {
+          method: opts.method || "GET",
+          headers: headers,
+          body: opts.body ? JSON.stringify(opts.body) : undefined,
+        });
+
+        var data = await response.json().catch(function () { return {}; });
+
+        if (response.status === 401) {
+          logout(true);
+          throw new Error(data.error || "Сесія завершилася. Увійдіть знову.");
+        }
+        if (!response.ok) throw new Error(data.error || "Помилка запиту.");
+        return data;
+      }
+
+      function showLogin() {
+        loginView.hidden = false;
+        dashboard.hidden = true;
+        logoutBtn.hidden = true;
+      }
+
+      function showDashboard() {
+        loginView.hidden = true;
+        dashboard.hidden = false;
+        logoutBtn.hidden = false;
+      }
+
+      function logout(silent) {
+        state.token = "";
+        sessionStorage.removeItem(TOKEN_KEY);
+        state.orders = [];
+        showLogin();
+        tokenInput.value = "";
+        if (!silent) toast("Ви вийшли з адмінки.");
+      }
+
+      function statusPill(status) {
+        var labels = { pending: "Очікує оплату", approved: "Оплачено", rejected: "Відхилено" };
+        return '<span class="pill pill--' + escapeHtml(status) + '">' + escapeHtml(labels[status] || status) + "</span>";
+      }
+
+      function renderOrders() {
+        var visible = state.orders.filter(function (order) {
+          return state.filter === "all" || order.status === state.filter;
+        });
+
+        if (!visible.length) {
+          ordersList.innerHTML = '<div class="empty">' +
+            (state.orders.length ? "У цьому фільтрі немає замовлень." : "Замовлень ще немає. Надішліть тестову заявку з paywall у конструкторі.") +
+            "</div>";
+          return;
+        }
+
+        ordersList.innerHTML = visible.map(function (order) {
+          var actions = "";
+
+          if (order.status === "pending") {
+            actions += '<button class="btn btn--ok" type="button" data-act="approve" data-id="' + escapeHtml(order.id) + '">Підтвердити оплату</button>';
+            actions += '<button class="btn btn--danger" type="button" data-act="reject" data-id="' + escapeHtml(order.id) + '">Відхилити</button>';
+          }
+
+          if (order.status === "approved") {
+            actions += '<button class="btn" type="button" data-act="reveal" data-id="' + escapeHtml(order.id) + '">Показати ключ</button>';
+            actions += '<button class="btn" type="button" data-act="resend" data-id="' + escapeHtml(order.id) + '">Надіслати ще раз</button>';
+            if (order.keyUsedAt) {
+              actions += '<span class="pill pill--rejected">Ключ уже використано</span>';
+            }
+          }
+
+          var delivery = "";
+          if (order.status === "approved") {
+            var statusText = order.emailStatus === "sent"
+              ? "Лист надіслано через Resend"
+              : order.emailStatus === "outbox"
+                ? "Лист збережено в " + (order.outboxFile || "data/outbox")
+                : order.emailStatus === "failed"
+                  ? "Помилка email: " + (order.emailError || "невідома")
+                  : "Email ще не надсилався";
+            delivery = '<p class="order__note">Email: ' + escapeHtml(statusText) + "</p>";
+          }
+
+          return '<article class="order' + (order.status === "pending" ? " is-pending" : "") + '">' +
+            '<div class="order__head">' +
+              "<div>" +
+                '<div class="order__id">' + escapeHtml(order.id) + " · " + escapeHtml(formatDate(order.createdAt)) + "</div>" +
+                '<h2 class="order__name">' + escapeHtml(order.name) + "</h2>" +
+                '<a class="order__email" href="mailto:' + escapeHtml(order.email) + '">' + escapeHtml(order.email) + "</a>" +
+              "</div>" +
+              statusPill(order.status) +
+            "</div>" +
+            '<div class="order__meta">' +
+              '<div class="meta-item"><span>Сума</span><strong>$' + escapeHtml(order.amount || 5) + "</strong></div>" +
+              '<div class="meta-item"><span>Спосіб оплати</span><strong>' + escapeHtml(order.method || "—") + "</strong></div>" +
+              '<div class="meta-item"><span>Транзакція / коментар</span><strong><code>' + escapeHtml(order.reference || "—") + "</code></strong></div>" +
+            "</div>" +
+            (order.note ? '<p class="order__note">' + escapeHtml(order.note) + "</p>" : "") +
+            delivery +
+            (order.status === "rejected" && order.rejectReason ? '<p class="order__note">Причина: ' + escapeHtml(order.rejectReason) + "</p>" : "") +
+            (actions ? '<div class="order__actions">' + actions + "</div>" : "") +
+            '<div class="key-slot" data-key-slot="' + escapeHtml(order.id) + '"></div>' +
+          "</article>";
+        }).join("");
+      }
+
+      function renderStats(data) {
+        var stats = data.stats || {};
+        document.getElementById("statPending").textContent = stats.pending || 0;
+        document.getElementById("statApproved").textContent = stats.approved || 0;
+        document.getElementById("statRejected").textContent = stats.rejected || 0;
+        document.getElementById("statKeys").textContent = (stats.usedKeys || 0) + " / " + (stats.totalKeys || 0);
+
+        emailNotice.hidden = false;
+        if (data.emailMode === "resend") {
+          emailNotice.className = "notice notice--ok";
+          emailNotice.innerHTML = "<div><strong>Email підключено.</strong> Листи покупцям і сповіщення надсилаються через Resend" +
+            (data.adminEmail ? " на <b>" + escapeHtml(data.adminEmail) + "</b>" : "") + ".</div>";
+        } else {
+          emailNotice.className = "notice";
+          emailNotice.innerHTML = "<div><strong>Демо-режим email.</strong> RESEND_API_KEY не задано, тому листи пишуться у <code>data/outbox</code>. " +
+            "Додайте ключ Resend і <code>ADMIN_EMAIL</code> у <code>.env</code>, щоб надсилати їх реально.</div>";
+        }
+      }
+
+      async function loadOrders(silent) {
+        if (state.busy) return;
+        state.busy = true;
+        refreshBtn.disabled = true;
+
+        try {
+          var data = await api("/api/admin/orders");
+          state.orders = data.orders || [];
+          renderStats(data);
+          renderOrders();
+          if (!silent) toast("Дані оновлено.");
+        } catch (error) {
+          toast(error.message, "error");
+        } finally {
+          state.busy = false;
+          refreshBtn.disabled = false;
+        }
+      }
+
+      function showKey(orderId, key, extra) {
+        var slot = ordersList.querySelector('[data-key-slot="' + String(orderId).replace(/"/g, '\\"') + '"]');
+        if (!slot) return;
+
+        slot.innerHTML = '<div class="key-reveal">' +
+          "<code>" + escapeHtml(key) + "</code>" +
+          '<button class="btn btn--accent" type="button" data-copy="' + escapeHtml(key) + '">Копіювати</button>' +
+          "<small>" + escapeHtml(extra || "Показується лише адміністратору. Ключ одноразовий.") + "</small>" +
+        "</div>";
+      }
+
+      async function approve(orderId) {
+        if (!confirm("Підтвердити оплату та надіслати покупцю одноразовий ключ?")) return;
+
+        try {
+          var data = await api("/api/admin/approve", { method: "POST", body: { orderId: orderId } });
+          var extra = data.emailStatus === "outbox"
+            ? "Email у демо-режимі: " + (data.outboxFile || "data/outbox") + ". Ключ також показано тут."
+            : data.emailStatus === "failed"
+              ? "Email не надіслано: " + (data.emailError || "помилка") + ". Передайте ключ вручну."
+              : "Лист із ключем надіслано на email покупця.";
+
+          toast("Оплату підтверджено.");
+          await loadOrders(true);
+          showKey(orderId, data.key, extra);
+        } catch (error) {
+          toast(error.message, "error");
+        }
+      }
+
+      async function reject(orderId) {
+        var reason = prompt("Причина відхилення (необов'язково):", "");
+        if (reason === null) return;
+
+        try {
+          await api("/api/admin/reject", { method: "POST", body: { orderId: orderId, reason: reason } });
+          toast("Замовлення відхилено.", "warn");
+          await loadOrders(true);
+        } catch (error) {
+          toast(error.message, "error");
+        }
+      }
+
+      async function reveal(orderId) {
+        try {
+          var data = await api("/api/admin/reveal", { method: "POST", body: { orderId: orderId } });
+          var extra = data.usedAt
+            ? "Ключ уже активовано " + formatDate(data.usedAt) + ". Повторна активація неможлива."
+            : "Ключ ще не активовано. Він одноразовий.";
+          showKey(orderId, data.key, extra);
+        } catch (error) {
+          toast(error.message, "error");
+        }
+      }
+
+      async function resend(orderId) {
+        try {
+          var data = await api("/api/admin/resend", { method: "POST", body: { orderId: orderId } });
+          if (data.emailStatus === "outbox") {
+            toast("Лист збережено в " + (data.outboxFile || "data/outbox") + ".", "warn");
+          } else if (data.emailStatus === "failed") {
+            toast("Не вдалося надіслати: " + (data.emailError || "помилка"), "error");
+          } else {
+            toast("Лист надіслано повторно.");
+          }
+          if (data.usedAt) toast("Увага: цей ключ уже використано.", "warn");
+        } catch (error) {
+          toast(error.message, "error");
+        }
+      }
+
+      loginForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        state.token = tokenInput.value.trim();
+        if (!state.token) return;
+
+        sessionStorage.setItem(TOKEN_KEY, state.token);
+        showDashboard();
+        await loadOrders(true);
+      });
+
+      logoutBtn.addEventListener("click", function () { logout(); });
+      refreshBtn.addEventListener("click", function () { loadOrders(false); });
+
+      document.querySelectorAll("[data-filter]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          state.filter = button.dataset.filter;
+          document.querySelectorAll("[data-filter]").forEach(function (item) {
+            item.classList.toggle("is-active", item === button);
+          });
+          renderOrders();
+        });
+      });
+
+      ordersList.addEventListener("click", function (event) {
+        var actionButton = event.target.closest("[data-act]");
+        if (actionButton) {
+          var id = actionButton.dataset.id;
+          var action = actionButton.dataset.act;
+          if (action === "approve") approve(id);
+          if (action === "reject") reject(id);
+          if (action === "reveal") reveal(id);
+          if (action === "resend") resend(id);
+          return;
+        }
+
+        var copyButton = event.target.closest("[data-copy]");
+        if (copyButton) {
+          var value = copyButton.dataset.copy || "";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(value).then(function () {
+              toast("Ключ скопійовано.");
+            }).catch(function () {
+              toast("Не вдалося скопіювати. Виділіть ключ вручну.", "error");
+            });
+          } else {
+            toast("Копіювання недоступне. Виділіть ключ вручну.", "error");
+          }
+        }
+      });
+
+      if (state.token) {
+        showDashboard();
+        loadOrders(true);
+      } else {
+        showLogin();
+      }
+
+      setInterval(function () {
+        if (state.token && !document.hidden) loadOrders(true);
+      }, 30000);
+    })();
+  </script>
+</body>
+</html>

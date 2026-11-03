@@ -1,0 +1,103 @@
+{
+  "orders": [
+    {
+      "id": "ord-mw0vawo2-1bf8c892",
+      "name": "dd",
+      "email": "suddkiril07@gmail.com",
+      "method": "Stripe",
+      "reference": "f",
+      "note": "f",
+      "amount": 5,
+      "currency": "USD",
+      "status": "approved",
+      "createdAt": "2026-11-03T15:53:41.863Z",
+      "approvedAt": "2026-11-03T15:54:37.105Z",
+      "licenseId": "lic-mw0vc3ao-496c5bfa",
+      "emailStatus": "outbox",
+      "emailError": "",
+      "outboxFile": "data\\outbox\\2026-11-03T15-54-37-105Z-suddkiril07@gmail.com.txt"
+    },
+    {
+      "id": "ord-mw0wsa47-7371d0de",
+      "name": "KYRYL SUDDENKO",
+      "email": "suddkiril07@gmail.com",
+      "method": "Stripe",
+      "reference": "e",
+      "note": "",
+      "amount": 5,
+      "currency": "USD",
+      "status": "approved",
+      "createdAt": "2026-11-03T16:35:12.055Z",
+      "approvedAt": "2026-11-03T16:38:01.584Z",
+      "licenseId": "lic-mw0wvwxc-e4345d0e",
+      "emailStatus": "outbox",
+      "emailError": "",
+      "outboxFile": "data\\outbox\\2026-11-03T16-38-01-584Z-suddkiril07@gmail.com.txt"
+    },
+    {
+      "id": "ord-mw0wshpl-5edbb4e6",
+      "name": "KYRYL SUDDENKO",
+      "email": "suddkiril07@gmail.com",
+      "method": "Stripe",
+      "reference": "e",
+      "note": "",
+      "amount": 5,
+      "currency": "USD",
+      "status": "approved",
+      "createdAt": "2026-11-03T16:35:21.897Z",
+      "approvedAt": "2026-11-03T16:35:44.737Z",
+      "licenseId": "lic-mw0wszc0-c53fdb34",
+      "emailStatus": "outbox",
+      "emailError": "",
+      "outboxFile": "data\\outbox\\2026-11-03T16-36-24-084Z-suddkiril07@gmail.com.txt"
+    }
+  ],
+  "licenses": [
+    {
+      "id": "lic-mw0vc3ao-496c5bfa",
+      "keyHash": "6ea8b4c60c0808963f255adae33a120b3747f227165784267fc021ea9243f117",
+      "keyEnc": {
+        "iv": "ZzW2aS20ZaQVisd5",
+        "tag": "yFYFqCCqjtfhiy3YOyrfAg==",
+        "data": "MtuDddkg1xPaT139KpTcLnZ6ULY="
+      },
+      "email": "suddkiril07@gmail.com",
+      "orderId": "ord-mw0vawo2-1bf8c892",
+      "createdAt": "2026-11-03T15:54:37.105Z",
+      "usedAt": null,
+      "usedIp": "",
+      "revokedAt": null
+    },
+    {
+      "id": "lic-mw0wszc0-c53fdb34",
+      "keyHash": "61e48a1d55441554b324b3ef2700d0f21feef3c8fa266e4ee35beb2f5c42a126",
+      "keyEnc": {
+        "iv": "7yjYjanRblmbqjpF",
+        "tag": "oSck4M0fr2ASVt2Bao44pA==",
+        "data": "rHAvcfNqODK3pG/nXTXPpqV4leM="
+      },
+      "email": "suddkiril07@gmail.com",
+      "orderId": "ord-mw0wshpl-5edbb4e6",
+      "createdAt": "2026-11-03T16:35:44.737Z",
+      "usedAt": "2026-11-03T16:36:37.501Z",
+      "usedIp": "127.0.0.1",
+      "revokedAt": null
+    },
+    {
+      "id": "lic-mw0wvwxc-e4345d0e",
+      "keyHash": "b4d21a4049ca6f64665726494eef792b55fab112cdbd610d18b01cc3367689ed",
+      "keyEnc": {
+        "iv": "HG0T7rOxxZA4+7Bh",
+        "tag": "cp6SKJyMezGp62wfThRfAw==",
+        "data": "cpwYH5Hv6Po5Hz/hKPEGSw4JbbU="
+      },
+      "email": "suddkiril07@gmail.com",
+      "orderId": "ord-mw0wsa47-7371d0de",
+      "createdAt": "2026-11-03T16:38:01.584Z",
+      "usedAt": null,
+      "usedIp": "",
+      "revokedAt": null
+    }
+  ],
+  "createdAt": "2026-11-03T15:52:52.069Z"
+}

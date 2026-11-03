@@ -1,0 +1,63 @@
+FolioForge local outbox
+======================
+To: suddkiril07@gmail.com
+From: FolioForge <onboarding@resend.dev>
+Subject: Ваш ключ FolioForge Pro ($5)
+Date: 2026-11-03T16:35:44.737Z
+
+Привіт, KYRYL SUDDENKO!
+
+Оплату $5 підтверджено. Дякуємо за підтримку FolioForge.
+
+Ваш одноразовий ключ: FOLIO-RZED-BWDK-SWQW
+
+Як активувати:
+1. Відкрийте http://localhost:4173
+2. Натисніть «Free» у шапці → «Вже маєте ліцензійний ключ?»
+3. Введіть ключ і натисніть «Активувати».
+
+Важливо: ключ одноразовий. Після активації він більше не спрацює.
+Не передавайте ключ іншим людям. Якщо ви втратили доступ до браузера,
+напишіть власнику FolioForge і вкажіть email, на який надійшов ключ.
+
+Що відкривається у Pro:
+• 6 тем замість 1 базової
+• 5 шрифтів і власний акцентний колір
+• Без watermark на експортованому сайті
+• До 30 навичок, 12 проєктів і 10 соцмереж
+
+Замовлення: ord-mw0wshpl-5edbb4e6
+Гарного дня!
+FolioForge
+
+-------------------- HTML --------------------
+
+    <div style="font-family:Arial,sans-serif;line-height:1.6;color:#1d1b16;max-width:560px;margin:0 auto">
+      <h2 style="margin:0 0 16px">Дякуємо за покупку!</h2>
+      <p>Привіт, KYRYL SUDDENKO!</p>
+      <p>Оплату <strong>$5</strong> підтверджено. Ваш ключ FolioForge Pro:</p>
+      <p style="margin:22px 0;padding:16px;border-radius:10px;background:#f3efe5;font-family:monospace;font-size:20px;letter-spacing:.06em;text-align:center">
+        <strong>FOLIO-RZED-BWDK-SWQW</strong>
+      </p>
+      <p><strong>Як активувати</strong></p>
+      <ol>
+        <li>Відкрийте <a href="http://localhost:4173">http://localhost:4173</a></li>
+        <li>Натисніть «Free» у шапці → «Вже маєте ліцензійний ключ?»</li>
+        <li>Введіть ключ і натисніть «Активувати».</li>
+      </ol>
+      <p style="padding:12px;border-left:3px solid #e8633f;background:#fff7f2">
+        <strong>Ключ одноразовий.</strong> Після активації він більше не спрацює.
+        Не передавайте його іншим. Якщо втратили доступ до браузера — напишіть
+        власнику FolioForge і вкажіть email, на який надійшов ключ.
+      </p>
+      <p><strong>Що відкривається у Pro:</strong></p>
+      <ul>
+        <li>6 тем замість 1 базової</li>
+        <li>5 шрифтів і власний акцентний колір</li>
+        <li>Без watermark на експортованому сайті</li>
+        <li>До 30 навичок, 12 проєктів і 10 соцмереж</li>
+      </ul>
+      <p style="color:#706a5e;font-size:13px">Замовлення: ord-mw0wshpl-5edbb4e6</p>
+      <p>Гарного дня!<br><strong>FolioForge</strong></p>
+    </div>
+  

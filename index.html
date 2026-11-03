@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080a0c">
+  <meta name="description" content="FolioForge — конструктор сучасних сайтів-портфоліо для розробників і фрилансерів. Редагуйте, переглядайте та експортуйте готовий адаптивний сайт.">
+  <title>FolioForge — конструктор портфоліо</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ─────────────────────────── Top bar ─────────────────────────── -->
+    <header class="app-header">
+      <a class="brand" href="#" aria-label="FolioForge — на початок">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-mark__letter">F</span>
+          <span class="brand-mark__slash">/</span>
+        </span>
+        <span class="brand-copy">
+          <strong>FolioForge</strong>
+          <small>portfolio studio</small>
+        </span>
+      </a>
+
+      <div class="header-divider" aria-hidden="true"></div>
+
+      <div class="workspace-label">
+        <span class="workspace-label__dot" aria-hidden="true"></span>
+        <span>Мій сайт</span>
+        <span class="workspace-label__slash" aria-hidden="true">/</span>
+        <strong>Редактор</strong>
+      </div>
+
+      <div class="header-actions">
+        <div class="save-status" id="saveStatus" role="status" aria-live="polite">
+          <span class="save-status__dot" aria-hidden="true"></span>
+          <span class="save-status__text">Збережено</span>
+        </div>
+
+        <div class="mobile-view-switch" id="mobileViewSwitch" aria-label="Перемикання редактора та превʼю">
+          <button class="mobile-view-switch__btn is-active" type="button" data-mobile-view="editor">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16M4 12h16M4 18.5h10"/></svg>
+            <span>Форма</span>
+          </button>
+          <button class="mobile-view-switch__btn" type="button" data-mobile-view="preview">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="13" rx="2"/><path d="M8.5 20.5h7M12 17.5v3"/></svg>
+            <span>Превʼю</span>
+          </button>
+        </div>
+
+        <button class="plan-pill" id="planPill" type="button" data-action="upgrade">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 5.4 5.9.7-4.4 4 1.2 5.8L12 15.9l-5.2 3 1.2-5.8-4.4-4 5.9-.7L12 3Z"/></svg>
+          <span id="planLabel">Free</span>
+        </button>
+
+        <button class="btn btn--ghost header-action" type="button" data-action="copy" aria-label="Скопіювати HTML-код">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5v-2a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></svg>
+          <span>Копіювати код</span>
+        </button>
+
+        <button class="btn btn--primary header-action" type="button" data-action="download" aria-label="Завантажити готовий сайт у ZIP">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17.5v1A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-1"/></svg>
+          <span>Завантажити ZIP</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ─────────────────────────── Workspace ─────────────────────────── -->
+    <main class="workspace">
+      <!-- Left: live editor -->
+      <section class="editor-panel" aria-label="Редактор портфоліо">
+        <div class="editor-panel__head">
+          <div>
+            <p class="eyebrow">FolioForge Studio</p>
+            <h1>Зберіть своє портфоліо</h1>
+          </div>
+          <span class="draft-badge"><span aria-hidden="true"></span>Draft</span>
+        </div>
+
+        <nav class="editor-tabs" aria-label="Розділи редактора" role="tablist">
+          <button class="editor-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-personal" id="tab-personal" data-tab="personal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20c.5-3.7 2.8-5.6 6.5-5.6s6 1.9 6.5 5.6"/></svg>
+            <span>Особисті дані</span>
+          </button>
+          <button class="editor-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-skills" id="tab-skills" data-tab="skills">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.9 6.4.6-4.8 4.3 1.4 6.3-5.6-3.3-5.6 3.3 1.4-6.3L3 9.5l6.4-.6L12 3Z"/></svg>
+            <span>Навички</span>
+          </button>
+          <button class="editor-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" id="tab-projects" data-tab="projects">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 9h17M8 5v4"/></svg>
+            <span>Проєкти</span>
+          </button>
+          <button class="editor-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-socials" id="tab-socials" data-tab="socials">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6m-7.6 6 7.6 3.6"/></svg>
+            <span>Соцмережі</span>
+          </button>
+          <button class="editor-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-theme" id="tab-theme" data-tab="theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c-5 0-8.5 3.6-8.5 8.2 0 4.2 3.2 7.3 7.2 7.3h1.1c1.4 0 2.2-1.5 1.4-2.6-.7-1.1.1-2.5 1.4-2.5h1.7c2.6 0 4.7-2 4.7-4.6 0-3.4-3.6-5.8-9-5.8Z"/><circle cx="8" cy="10" r=".9" fill="currentColor" stroke="none"/><circle cx="11" cy="7.8" r=".9" fill="currentColor" stroke="none"/><circle cx="15" cy="8.4" r=".9" fill="currentColor" stroke="none"/></svg>
+            <span>Тема</span>
+          </button>
+        </nav>
+
+        <div class="editor-scroll" id="editorScroll">
+          <form id="editorForm" novalidate autocomplete="off">
+            <!-- Personal -->
+            <section class="editor-pane is-active" id="panel-personal" role="tabpanel" aria-labelledby="tab-personal" data-panel="personal">
+              <div class="pane-heading">
+                <p class="pane-heading__index">01 / Особисті дані</p>
+                <h2>Розкажіть про себе</h2>
+                <p>Імʼя, роль і коротке позиціонування — основа, яку відвідувач побачить першою.</p>
+              </div>
+
+              <div class="form-card">
+                <div class="avatar-row">
+                  <div class="avatar-preview" id="avatarPreview" aria-hidden="true">
+                    <span id="avatarInitials">ОК</span>
+                  </div>
+                  <div class="field field--grow">
+                    <label for="avatarUrl">Фото профілю <span class="label-optional">URL · необовʼязково</span></label>
+                    <input id="avatarUrl" type="url" data-path="profile.avatar" placeholder="https://example.com/photo.jpg">
+                    <p class="field-hint">Без фото буде показано стильний аватар з ініціалами.</p>
+                  </div>
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="profileName">Повне імʼя</label>
+                    <input id="profileName" type="text" data-path="profile.name" placeholder="Олександр Коваленко" maxlength="60" required>
+                  </div>
+                  <div class="field">
+                    <label for="profileRole">Професійна роль</label>
+                    <input id="profileRole" type="text" data-path="profile.role" placeholder="Full-Stack Developer" maxlength="70" required>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="profileBio">Короткий опис</label>
+                  <textarea id="profileBio" rows="4" data-path="profile.bio" placeholder="Створюю швидкі цифрові продукти..." maxlength="260"></textarea>
+                  <div class="field-foot">
+                    <p class="field-hint">1–2 речення про те, що ви робите і для кого.</p>
+                    <span class="char-count" data-counter-for="profile.bio">0 / 260</span>
+                  </div>
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="profileLocation">Локація</label>
+                    <input id="profileLocation" type="text" data-path="profile.location" placeholder="Київ, Україна" maxlength="60">
+                  </div>
+                  <div class="field">
+                    <label for="profileEmail">Email</label>
+                    <input id="profileEmail" type="email" data-path="profile.email" placeholder="hello@example.com" maxlength="100">
+                  </div>
+                </div>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="profileResume">Резюме / CV <span class="label-optional">URL</span></label>
+                    <input id="profileResume" type="url" data-path="profile.resumeUrl" placeholder="https://drive.google.com/...">
+                  </div>
+                  <div class="field">
+                    <label for="profileCta">Текст головної кнопки</label>
+                    <input id="profileCta" type="text" data-path="profile.ctaLabel" placeholder="Обговорити проєкт" maxlength="32">
+                  </div>
+                </div>
+
+                <label class="switch-row" for="profileAvailable">
+                  <span class="switch-row__copy">
+                    <strong>Відкритий до нових проєктів</strong>
+                    <small>Додає зелений статус у шапці сайту.</small>
+                  </span>
+                  <span class="switch">
+                    <input id="profileAvailable" type="checkbox" data-path="profile.available">
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="inline-tip">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M8.4 14.5a6 6 0 1 1 7.2 0c-1 .8-1.6 1.6-1.6 2.5h-4c0-.9-.6-1.7-1.6-2.5Z"/></svg>
+                <p><strong>Порада.</strong> Пишіть про результат, а не лише про технології: «зменшив час завантаження на 40%» звучить переконливіше.</p>
+              </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="editor-pane" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" data-panel="skills" hidden>
+              <div class="pane-heading">
+                <p class="pane-heading__index">02 / Навички</p>
+                <h2>Ваш технічний стек</h2>
+                <p>Додайте 5–10 ключових навичок. Рівень показується як акуратна смуга прогресу.</p>
+              </div>
+              <div class="repeater-list" id="skillsList"></div>
+              <button class="add-block-btn" id="addSkillBtn" type="button">
+                <span class="add-block-btn__icon" aria-hidden="true">+</span>
+                <span><strong>Додати навичку</strong><small>Технологія, інструмент або компетенція</small></span>
+              </button>
+              <div class="inline-tip">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M7.5 15l3-4 3 2.2 5-6.2"/></svg>
+                <p><strong>Порада.</strong> Розташуйте найсильніші навички першими — рекрутери часто сканують список за 10 секунд.</p>
+              </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="editor-pane" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" data-panel="projects" hidden>
+              <div class="pane-heading">
+                <p class="pane-heading__index">03 / Проєкти</p>
+                <h2>Покажіть свою роботу</h2>
+                <p>Додавайте реальні кейси: що це було, яку задачу вирішували та який результат отримав клієнт.</p>
+              </div>
+              <div class="repeater-list" id="projectsList"></div>
+              <button class="add-block-btn" id="addProjectBtn" type="button">
+                <span class="add-block-btn__icon" aria-hidden="true">+</span>
+                <span><strong>Додати проєкт</strong><small>Кейс, pet-проєкт або клієнтська робота</small></span>
+              </button>
+              <div class="inline-tip">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>
+                <p><strong>Порада.</strong> Для кожного кейсу додайте посилання на live-версію або GitHub — це підвищує довіру.</p>
+              </div>
+            </section>
+
+            <!-- Socials -->
+            <section class="editor-pane" id="panel-socials" role="tabpanel" aria-labelledby="tab-socials" data-panel="socials" hidden>
+              <div class="pane-heading">
+                <p class="pane-heading__index">04 / Соцмережі</p>
+                <h2>Де вас знайти</h2>
+                <p>Додайте профілі, які хочете показати. Іконки автоматично підлаштуються під обрану мережу.</p>
+              </div>
+              <div class="social-list" id="socialsList"></div>
+              <button class="add-block-btn" id="addSocialBtn" type="button">
+                <span class="add-block-btn__icon" aria-hidden="true">+</span>
+                <span><strong>Додати соцмережу</strong><small>GitHub, LinkedIn, Telegram, Behance та інші</small></span>
+              </button>
+              <div class="inline-tip">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.3 5.1 3.3 8.5S14.2 18.2 12 20.5C9.8 18.2 8.7 15.4 8.7 12S9.8 5.8 12 3.5Z"/></svg>
+                <p><strong>Порада.</strong> Достатньо 3–4 активних профілів. Менше шуму — більше фокусу на головному.</p>
+              </div>
+            </section>
+
+            <!-- Theme -->
+            <section class="editor-pane" id="panel-theme" role="tabpanel" aria-labelledby="tab-theme" data-panel="theme" hidden>
+              <div class="pane-heading">
+                <p class="pane-heading__index">05 / Візуальний стиль</p>
+                <h2>Задайте настрій</h2>
+                <p>Оберіть тему, шрифтову пару й акцент. Зміни одразу зʼявляться у live-превʼю.</p>
+              </div>
+
+              <div class="settings-section">
+                <div class="settings-section__head">
+                  <div>
+                    <h3>Колірна тема</h3>
+                    <p>1 базова тема + 5 Pro-тем</p>
+                  </div>
+                  <span class="soft-badge" id="themeCountBadge">1 / 6</span>
+                </div>
+                <div class="theme-grid" id="themeGrid" role="radiogroup" aria-label="Колірна тема"></div>
+              </div>
+
+              <div class="settings-section">
+                <div class="settings-section__head">
+                  <div>
+                    <h3>Шрифтова пара</h3>
+                    <p>1 базовий шрифт + 4 Pro-шрифти</p>
+                  </div>
+                </div>
+                <div class="font-grid" id="fontGrid" role="radiogroup" aria-label="Шрифт"></div>
+              </div>
+
+              <div class="settings-section">
+                <div class="settings-section__head">
+                  <div>
+                    <h3>Акцентний колір</h3>
+                    <p>У Free — колір теми. У Pro — власний</p>
+                  </div>
+                </div>
+                <div class="accent-row">
+                  <div class="accent-swatches" id="accentGrid" role="radiogroup" aria-label="Акцентний колір"></div>
+                  <label class="color-picker" for="customAccent" title="Власний колір">
+                    <input id="customAccent" type="color" value="#c7ff4e" aria-label="Власний акцентний колір">
+                    <span aria-hidden="true"></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="pro-banner">
+                <div class="pro-banner__glow" aria-hidden="true"></div>
+                <div class="pro-banner__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m12 3 2.5 5.4 5.9.7-4.4 4 1.2 5.8L12 15.9l-5.2 3 1.2-5.8-4.4-4 5.9-.7L12 3Z"/></svg>
+                </div>
+                <div class="pro-banner__copy">
+                  <strong>Більше стилю з FolioForge Pro</strong>
+                  <p>Відкрийте ще 5 тем, 4 шрифти, власний акцент і приберіть watermark з експорту.</p>
+                </div>
+                <button class="btn btn--small btn--light" type="button" data-action="upgrade">Відкрити Pro</button>
+              </div>
+            </section>
+          </form>
+        </div>
+
+        <div class="editor-bottom-bar">
+          <span class="local-save">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10V7a2 2 0 0 1 2-2h8l4 4v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3"/><path d="M9 13h8m-3-3 3 3-3 3"/><path d="M5 10V7"/></svg>
+            Автозбереження у браузері
+          </span>
+          <button class="text-btn" id="resetBtn" type="button">Скинути дані</button>
+        </div>
+      </section>
+
+      <!-- Right: live preview -->
+      <section class="preview-panel" aria-label="Живе превʼю сайту">
+        <div class="preview-toolbar">
+          <div class="live-indicator">
+            <span class="live-indicator__dot" aria-hidden="true"></span>
+            <strong>Live Preview</strong>
+            <span class="live-indicator__hint" id="previewUpdateHint">оновлюється автоматично</span>
+          </div>
+
+          <div class="preview-tools">
+            <div class="device-switch" role="group" aria-label="Розмір превʼю">
+              <button class="device-switch__btn is-active" type="button" data-device="desktop" aria-label="Десктоп" title="Десктоп">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="1.8"/><path d="M8 20h8M12 16.5V20"/></svg>
+              </button>
+              <button class="device-switch__btn" type="button" data-device="tablet" aria-label="Планшет" title="Планшет">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M11 17.5h2"/></svg>
+              </button>
+              <button class="device-switch__btn" type="button" data-device="mobile" aria-label="Смартфон" title="Смартфон">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M10.5 18.5h3"/></svg>
+              </button>
+            </div>
+
+            <button class="icon-btn" id="refreshPreviewBtn" type="button" aria-label="Оновити превʼю" title="Оновити превʼю">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 1 0-2.3 6.4"/><path d="M20 4.5v7h-7"/></svg>
+            </button>
+            <button class="icon-btn" id="openPreviewBtn" type="button" aria-label="Відкрити превʼю в новій вкладці" title="Відкрити в новій вкладці">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 5H19v5.5M19 5l-7.5 7.5"/><path d="M17 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="preview-stage">
+          <div class="browser-frame" id="browserFrame" data-device="desktop">
+            <div class="browser-chrome">
+              <div class="traffic-lights" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="address-bar">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg>
+                <span id="previewUrl">folioforge.site/oleksandr</span>
+              </div>
+              <span class="chrome-live"><span aria-hidden="true"></span>Live</span>
+            </div>
+            <div class="preview-viewport">
+              <iframe id="previewFrame" title="Живий попередній перегляд портфоліо" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-footer">
+          <div class="preview-meta">
+            <span id="previewMeta">0 проєктів · 0 навичок</span>
+            <span class="preview-meta__sep" aria-hidden="true"></span>
+            <span>Адаптивний HTML</span>
+          </div>
+          <div class="preview-footer__actions">
+            <button class="btn btn--ghost btn--small" type="button" data-action="copy">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5v-2a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></svg>
+              <span>Копіювати код</span>
+            </button>
+            <button class="btn btn--primary btn--small" type="button" data-action="download">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17.5v1A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-1"/></svg>
+              <span>Завантажити ZIP</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ─────────────────────────── Paywall ─────────────────────────── -->
+  <div class="modal-backdrop" id="paywallModal" hidden>
+    <div class="paywall-modal" role="dialog" aria-modal="true" aria-labelledby="paywallTitle" aria-describedby="paywallDescription" tabindex="-1">
+      <button class="modal-close" type="button" data-action="close-paywall" aria-label="Закрити вікно">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+
+      <div class="paywall glow-card">
+        <div class="paywall__visual" aria-hidden="true">
+          <div class="paywall__orb paywall__orb--one"></div>
+          <div class="paywall__orb paywall__orb--two"></div>
+          <div class="paywall__grid"></div>
+          <div class="paywall__mini-site">
+            <div class="mini-site__bar"><span></span><span></span><span></span></div>
+            <div class="mini-site__nav"><i></i><b></b><b></b><b></b></div>
+            <div class="mini-site__hero">
+              <div class="mini-site__copy">
+                <span class="mini-site__tag">PRO THEME</span>
+                <strong>Design that<br>gets remembered.</strong>
+                <div class="mini-site__lines"><i></i><i></i></div>
+                <span class="mini-site__button"></span>
+              </div>
+              <div class="mini-site__art"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mini-site__cards"><i></i><i></i><i></i></div>
+          </div>
+          <div class="paywall__floating-badge">
+            <svg viewBox="0 0 24 24"><path d="m12 3 2.5 5.4 5.9.7-4.4 4 1.2 5.8L12 15.9l-5.2 3 1.2-5.8-4.4-4 5.9-.7L12 3Z"/></svg>
+            <span>5 premium themes</span>
+          </div>
+        </div>
+
+        <div class="paywall__content">
+          <p class="eyebrow eyebrow--accent">FolioForge Pro</p>
+          <h2 id="paywallTitle">Портфоліо, яке<br><span>запамʼятовується.</span></h2>
+          <p class="paywall__lead" id="paywallDescription">Розблокуйте повний набір стилів і приберіть брендинг FolioForge з готового сайту.</p>
+
+          <ul class="pro-features">
+            <li>
+              <span class="pro-features__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12.5 4 4 8-9"/></svg></span>
+              <span><strong>Усі 6 тем і 5 шрифтів</strong><small>Cyberpunk, Neon Glass, Editorial, Terminal, Aurora</small></span>
+            </li>
+            <li>
+              <span class="pro-features__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12.5 4 4 8-9"/></svg></span>
+              <span><strong>Власний акцент і більше контенту</strong><small>До 30 навичок, 12 проєктів і 10 соцмереж</small></span>
+            </li>
+            <li>
+              <span class="pro-features__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12.5 4 4 8-9"/></svg></span>
+              <span><strong>Без watermark</strong><small>Чистий експорт без «Зроблено у FolioForge»</small></span>
+            </li>
+            <li>
+              <span class="pro-features__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12.5 4 4 8-9"/></svg></span>
+              <span><strong>Комерційна ліцензія</strong><small>Використовуйте для власних і клієнтських сайтів</small></span>
+            </li>
+          </ul>
+
+          <div class="paywall__price">
+            <div>
+              <span class="paywall__amount">$5</span>
+              <span class="paywall__period">один платіж · назавжди</span>
+            </div>
+            <span class="paywall__save">Lifetime</span>
+          </div>
+
+          <button class="btn btn--accent btn--wide" id="checkoutButton" type="button">
+            <span>Оформити FolioForge Pro</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+          </button>
+          <p class="paywall__fineprint">Оплата $5. Після ручного підтвердження власником ключ надійде на email.</p>
+
+          <div class="purchase-box" id="purchaseBox" hidden>
+            <p class="purchase-instructions" id="purchaseInstructions" hidden></p>
+
+            <form class="purchase-form" id="purchaseForm">
+              <div class="purchase-form__grid">
+                <label class="purchase-field">
+                  <span>Імʼя</span>
+                  <input name="name" type="text" maxlength="60" autocomplete="name" placeholder="Олександр" required>
+                </label>
+                <label class="purchase-field">
+                  <span>Email для ключа</span>
+                  <input name="email" type="email" maxlength="120" autocomplete="email" placeholder="you@example.com" required>
+                </label>
+              </div>
+
+              <label class="purchase-field">
+                <span>Спосіб оплати</span>
+                <select name="method">
+                  <option value="Stripe">Stripe</option>
+                  <option value="PayPal">PayPal</option>
+                  <option value="IBAN / картка">IBAN / картка</option>
+                  <option value="Crypto">Crypto</option>
+                  <option value="Інше">Інше</option>
+                </select>
+              </label>
+
+              <label class="purchase-field">
+                <span>Номер транзакції / останні 4 цифри картки</span>
+                <input name="reference" type="text" maxlength="160" placeholder="TX-123456 або •••• 4242">
+              </label>
+
+              <label class="purchase-field">
+                <span>Коментар <small>необовʼязково</small></span>
+                <textarea name="note" rows="2" maxlength="500" placeholder="Наприклад: оплатив 03.11, PayPal"></textarea>
+              </label>
+
+              <button class="btn btn--accent btn--wide" type="submit">Надіслати заявку</button>
+              <p class="purchase-note">Власник перевірить оплату вручну. Після підтвердження ключ надійде на email. Ключ одноразовий.</p>
+            </form>
+
+            <div class="purchase-success" id="purchaseSuccess" hidden></div>
+          </div>
+
+          <div class="license-box">
+            <div class="license-box__head">
+              <span>Вже маєте ліцензійний ключ?</span>
+              <button class="text-btn" type="button" id="licenseToggle">Ввести ключ</button>
+            </div>
+            <form class="license-form" id="licenseForm" hidden>
+              <input id="licenseInput" type="text" placeholder="FOLIO-XXXX-XXXX-XXXX" aria-label="Ліцензійний ключ" autocomplete="off" spellcheck="false">
+              <button class="btn btn--light btn--small" type="submit">Активувати</button>
+            </form>
+            <p class="license-demo">Ключ одноразовий: після активації він більше не спрацює. Втратили доступ до браузера? Напишіть власнику.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript>
+    <div class="noscript">Для роботи конструктора потрібно увімкнути JavaScript.</div>
+  </noscript>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
